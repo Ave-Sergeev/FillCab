@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/headAndFooter :: head"></head>
+
+<body>
+    <header th:insert="blocks/head :: header"></header>
+        <main class="container mt-5">
+            <div class="starter-template text-center">
+                <h1 th:text="'Результат поиска по запросу: ' + ${name}"></h1>
+                <div th:insert="blocks/outputDataPerson :: outputDataPerson"></div>
+            </div>
+        </main>
+    <div th:insert="blocks/headAndFooter :: footer"></div>
+</body>
+</html>

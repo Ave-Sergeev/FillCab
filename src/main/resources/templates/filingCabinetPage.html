@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/headAndFooter :: head"></head>
+
+<body>
+    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class=" my-0 mr-md-auto fw-normal">Boring company</h5>
+        <nav class="my-2 my-md-0 mr-md-3"></nav>
+        <a class="btn btn-outline-primary mr-3" href="/createPersonPage">Создать карточку работника</a>
+        <a class="btn btn-outline-primary mr-3" href="/actionDepartPage">Действия над подразделениями</a>
+        <form th:object="${personsList}" th:action="@{/searchPersonPage}" method="get">
+            <input type="submit" value="Искать по имени" class="btn btn-outline-primary mr-1"/>
+            <input type="text" name="name" id="name" th:value="${search}"/>
+        </form>
+    </header>
+    <main class="container mt-5">
+        <div class="starter-template text-center">
+            <h1>Картотека компании.</h1>
+            <div th:insert="blocks/outputDataPerson :: outputDataPerson"></div>
+        </div>
+    </main>
+    <div th:insert="blocks/headAndFooter :: footer"></div>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<div th:fragment="outputDataPerson">
+    <table border="3" class="table table-hover mt-5">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Мобильный телефон</th>
+            <th>Подразделение</th>
+            <th>Должность</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <div th:each="person: ${personsList}">
+            <tr>
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.surname}"></td>
+                <td th:text="${person.patronymic}"></td>
+                <td th:text="${person.mobilePhone}"></td>
+                <td th:text="${person.department?.name}?:'{Не установлено}'"></td>
+                <td th:text="${person.position}"></td>
+                <td><a th:href="@{/edit/{id}(id=${person.id})}">Править</a></td>
+                <td><a th:href="@{/delete/{id}(id=${person.id})}">Удалить</a></td>
+            </tr>
+        </div>
+    </table>
+</div>

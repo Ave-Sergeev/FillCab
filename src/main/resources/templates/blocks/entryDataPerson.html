@@ -1,0 +1,48 @@
+<div th:fragment="entryDataPerson">
+    <div class="form-group">
+        <label for="name" class="col-xs-2 control-label">Имя</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" th:field="*{name}" id="name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="surname" class="col-xs-2 control-label">Фамилия</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" th:field="*{surname}" id="surname"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="patronymic" class="col-xs-2 control-label">Отчество</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" th:field="*{patronymic}" id="patronymic"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mobilePhone" class="col-xs-2 control-label">Мобильный телефон</label>
+        <div class="col-xs-10">
+            <input type="text" th:field="*{mobilePhone}" class="form-control" id="mobilePhone">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="position" class="col-xs-2 control-label">Подразделение</label>
+        <div th:if="${departmentsList != null and not #lists.isEmpty(departmentsList)}" class="col-xs-10">
+            <select th:field="*{department}" class="form-control">
+                <option th:each="dropDownItem : ${departmentsList}"
+                        th:value="${dropDownItem.id}"
+                        th:text="${dropDownItem.name}">
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="position" class="col-xs-2 control-label">Должность</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" th:field="*{position}" id="position"/>
+        </div>
+    </div>
+    <div class="form-group mt-3">
+        <div class="col-xs-offset-2 col-xs-10">
+            <input type="submit" class="btn btn-primary" value="Отправить в картотеку">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/headAndFooter :: head"></head>
+
+<body>
+<header th:insert="blocks/headAndFooter :: header"></header>
+<main class="container">
+    <div class="starter-template text-center py-5 px-3">
+        <h2 class="mt-5">Возможные действия</h2>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <form th:method="POST" th:action="@{/actionDepartPage}" th:object="${createDepart}" class="form-horizontal text-center">
+                    <div class="form-group">
+                        <label for="name" class="col-xs-2 control-label">Добавление подразделения</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" th:field="*{name}" id="name" placeholder="Введите Название"/>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <input type="submit" class="btn btn-primary" value="Добавить поздразделение"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 offset-md-4">
+                <form th:method="POST" th:action="@{actionDepartPage/delete/{id}}" class="form-horizontal text-center">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">Удаление подразделения</label>
+                        <div class="col-xs-10">
+                            <select class="form-control" name="id">
+                                <option th:each="dropDownItem : ${departmentsList}"
+                                        th:value="${dropDownItem.id}"
+                                        th:text="${dropDownItem.name}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <div class="col-xs-offset-2 col-xs-10">
+                                <input type="submit" class="btn btn-primary" value="Удалить подразделение"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<div th:insert="blocks/headAndFooter :: footer"></div>
+</body>
+</html>
