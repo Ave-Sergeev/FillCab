@@ -1,4 +1,4 @@
-package com.example.telephoneTry.models
+package com.example.FillCab.models
 
 import javax.persistence.*
 import javax.persistence.PreRemove

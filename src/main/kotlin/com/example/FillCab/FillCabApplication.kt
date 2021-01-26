@@ -1,7 +1,6 @@
-package com.example.telephoneTry
+package com.example.FillCab
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 import org.springframework.boot.runApplication
 
 @SpringBootApplication

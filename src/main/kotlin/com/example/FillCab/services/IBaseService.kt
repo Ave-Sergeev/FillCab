@@ -1,4 +1,4 @@
-package com.example.telephoneTry.services
+package com.example.FillCab.services
 
 interface IBaseService<T> {
     //Найти все объекты

@@ -1,7 +1,7 @@
-package com.example.telephoneTry.services
+package com.example.FillCab.services
 
-import com.example.telephoneTry.models.PersonalCard
-import com.example.telephoneTry.repository.IPersonalCardRepository
+import com.example.FillCab.models.PersonalCard
+import com.example.FillCab.repository.IPersonalCardRepository
 import org.springframework.stereotype.Service
 import java.util.*
 

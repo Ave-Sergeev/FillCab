@@ -1,7 +1,7 @@
-package com.example.telephoneTry.controllers
+package com.example.FillCab.controllers
 
-import com.example.telephoneTry.models.DepartmentCard
-import com.example.telephoneTry.services.DepartmentServiceImpl
+import com.example.FillCab.models.DepartmentCard
+import com.example.FillCab.services.DepartmentServiceImpl
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set

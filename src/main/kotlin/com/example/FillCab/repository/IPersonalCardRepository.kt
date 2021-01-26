@@ -1,6 +1,6 @@
-package com.example.telephoneTry.repository
+package com.example.FillCab.repository
 
-import com.example.telephoneTry.models.PersonalCard
+import com.example.FillCab.models.PersonalCard
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 
