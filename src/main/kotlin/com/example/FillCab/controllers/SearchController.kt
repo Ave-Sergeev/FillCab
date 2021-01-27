@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam
 class SearchController (val personalServiceImpl: PersonalServiceImpl) {
 
     //Отдаем страницу Поиска работника
-    @GetMapping("/searchPersonPage{name}")
-    fun searchPersonShow(@RequestParam(value = "name", required = false) name: String,
+    @GetMapping("/searchPersonPage{surname}")
+    fun searchPersonShow(@RequestParam(value = "surname", required = false) surname: String,
                          model: MutableMap<String, Any?>): String {
-        val allSearchName: Iterable<PersonalCard> = personalServiceImpl.findByNameIgnoreCase(name)
+        val allSearchName: Iterable<PersonalCard> = personalServiceImpl.findBySurnameIgnoreCase(surname)
         model["personsList"] = allSearchName
-        model["name"] = name
+        model["surname"] = surname
         return "searchPersonPage"
     }
 }

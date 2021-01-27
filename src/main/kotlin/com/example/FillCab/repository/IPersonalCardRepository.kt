@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface IPersonalCardRepository : CrudRepository<PersonalCard, Long> {
     //Найти по имени игнорируя регистр
-    fun findByNameIgnoreCase(name: String): Iterable<PersonalCard>
+    fun findBySurnameIgnoreCase(name: String): Iterable<PersonalCard>
 }

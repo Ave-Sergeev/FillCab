@@ -10,6 +10,6 @@ interface IBaseService<T> {
     //Удалить объект
     fun delete(card: T)
 
-    ////Удалить объект c определенным id
+    //Удалить объект c определенным id
     fun deleteById(id: Long)
 }

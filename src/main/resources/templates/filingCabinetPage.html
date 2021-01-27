@@ -10,8 +10,8 @@
         <a class="btn btn-outline-primary mr-3" href="/createPersonPage">Создать карточку работника</a>
         <a class="btn btn-outline-primary mr-3" href="/actionDepartPage">Действия над подразделениями</a>
         <form th:object="${personsList}" th:action="@{/searchPersonPage}" method="get">
-            <input type="submit" value="Искать по имени" class="btn btn-outline-primary mr-1"/>
-            <input type="text" name="name" id="name" th:value="${search}"/>
+            <input type="submit" value="Искать по фамилии" class="btn btn-outline-primary mr-1"/>
+            <input type="text" name="surname" id="surname" th:value="${search}"/>
         </form>
     </header>
     <main class="container mt-5">

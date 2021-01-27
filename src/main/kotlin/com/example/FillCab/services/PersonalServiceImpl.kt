@@ -20,8 +20,8 @@ class PersonalServiceImpl(val personalCardRepository: IPersonalCardRepository): 
     }
 
     //Переопределяем из репозитория
-    fun findByNameIgnoreCase(name: String): Iterable<PersonalCard> {
-        return personalCardRepository.findByNameIgnoreCase(name)
+    fun findBySurnameIgnoreCase(surname: String): Iterable<PersonalCard> {
+        return personalCardRepository.findBySurnameIgnoreCase(surname)
     }
 
     //Переопределяем из репозитория

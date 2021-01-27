@@ -2,8 +2,8 @@
     <table border="3" class="table table-hover mt-5">
         <thead>
         <tr>
-            <th>Имя</th>
             <th>Фамилия</th>
+            <th>Имя</th>
             <th>Отчество</th>
             <th>Мобильный телефон</th>
             <th>Подразделение</th>
@@ -14,8 +14,8 @@
         </thead>
         <div th:each="person: ${personsList}">
             <tr>
-                <td th:text="${person.name}"></td>
                 <td th:text="${person.surname}"></td>
+                <td th:text="${person.name}"></td>
                 <td th:text="${person.patronymic}"></td>
                 <td th:text="${person.mobilePhone}"></td>
                 <td th:text="${person.department?.name}?:'{Не установлено}'"></td>

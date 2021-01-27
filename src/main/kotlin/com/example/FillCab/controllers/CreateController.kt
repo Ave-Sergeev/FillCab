@@ -20,7 +20,6 @@ class CreateController (val personalServiceImpl: PersonalServiceImpl,
                             model: MutableMap<String, Any?>): String {
         personalServiceImpl.save(person)
         model["personsList"] = personalServiceImpl.findAll()
-
         return "redirect:/"
     }
 
@@ -29,7 +28,7 @@ class CreateController (val personalServiceImpl: PersonalServiceImpl,
     fun createPersonShow(@ModelAttribute("person") person: PersonalCard?,
                          model: Model): String {
         model["departmentsList"] = departmentServiceImpl.findAll()
-
         return "createPersonPage"
     }
 }
+
