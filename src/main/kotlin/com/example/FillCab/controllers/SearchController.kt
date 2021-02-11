@@ -16,6 +16,7 @@ class SearchController (val personalServiceImpl: PersonalServiceImpl) {
         val allSearchName: Iterable<PersonalCard> = personalServiceImpl.findBySurnameIgnoreCase(surname)
         model["personsList"] = allSearchName
         model["surname"] = surname
+
         return "searchPersonPage"
     }
 }

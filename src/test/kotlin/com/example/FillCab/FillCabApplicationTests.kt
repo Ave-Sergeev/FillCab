@@ -8,8 +8,6 @@ class FillCabApplicationTests {
 
 	@Test
 	fun contextLoads() {
-
 	}
-
 }
 

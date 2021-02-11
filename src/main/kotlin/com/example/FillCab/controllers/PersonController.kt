@@ -19,15 +19,16 @@ class PersonController(val personalServiceImpl: PersonalServiceImpl,
     @GetMapping()
     fun filingCabinetShow(model: MutableMap<String, Any?>): String {
         model["personsList"] = personalServiceImpl.findAll()
+
         return "filingCabinetPage"
     }
 
     //Отдаем главную страницу(filingCabinetPage) после удаления работника
     @GetMapping("/delete/{id}")
-    fun deletePersonShow(@PathVariable("id") id: Long,
-                         model: Model?): String {
+    fun deletePersonShow(@PathVariable("id") id: Long, model: Model?): String {
         val person = personalServiceImpl.findById(id).orElseThrow{IllegalArgumentException("Invalid user Id:$id")}
         personalServiceImpl.delete(person)
+
         return "redirect:/"
     }
 
@@ -38,6 +39,7 @@ class PersonController(val personalServiceImpl: PersonalServiceImpl,
                      result: BindingResult,
                      model: Model?): String {
         personalServiceImpl.save(person)
+
         return "redirect:/"
     }
 
@@ -47,6 +49,7 @@ class PersonController(val personalServiceImpl: PersonalServiceImpl,
         val person = personalServiceImpl.findById(id).orElseThrow{IllegalArgumentException("Invalid user Id:$id")}
         model["departmentsList"] = departmentServiceImpl.findAll()
         model["person"] = person
+
         return "updatePersonPage"
     }
 }

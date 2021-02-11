@@ -15,6 +15,7 @@ class DepartmentController(val departmentServiceImpl: DepartmentServiceImpl) {
     fun actionsWithDepartmentShow(@ModelAttribute("createDepart") depart: DepartmentCard?,
                                   model: Model): String {
         model["departmentsList"] = departmentServiceImpl.findAll()
+
         return "actionDepartPage"
     }
 
@@ -22,6 +23,7 @@ class DepartmentController(val departmentServiceImpl: DepartmentServiceImpl) {
     @PostMapping("/actionDepartPage")
     fun createDepartment(@ModelAttribute("createDepart") depart: DepartmentCard): String {
         departmentServiceImpl.save(depart)
+
         return "redirect:/"
     }
 
@@ -29,6 +31,7 @@ class DepartmentController(val departmentServiceImpl: DepartmentServiceImpl) {
     @PostMapping("/actionDepartPage/delete/{id}")
     fun deleteDepartment(@RequestParam("id") id: Long): String {
         departmentServiceImpl.deleteById(id)
+
         return "redirect:/"
     }
 }
