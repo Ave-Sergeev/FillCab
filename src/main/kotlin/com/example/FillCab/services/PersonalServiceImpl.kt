@@ -5,6 +5,12 @@ import com.example.FillCab.repository.IPersonalCardRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
+/**
+ * Реализация сервиса Работника(выносим логику из контроллеров),
+ * переопредены методы поиска, сохранения, удаления.
+ * При дальнейшем усложнении логики, и развитии веб-приложения - наличие сервиса будет оправдано.
+ */
+
 @Service
 class PersonalServiceImpl(val personalCardRepository: IPersonalCardRepository): IBaseService<PersonalCard>  {
     override fun findAll(): Iterable<PersonalCard> {

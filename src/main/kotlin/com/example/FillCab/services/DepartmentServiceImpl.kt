@@ -5,6 +5,12 @@ import com.example.FillCab.repository.IDepartmentCardRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
+/**
+ * Реализация сервиса Отделов(выносим логику из контроллеров),
+ * переопредены методы поиска по всем, сохранения, удаления.
+ * При дальнейшем усложнении логики, и развитии веб-приложения - наличие сервиса будет оправдано.
+ */
+
 @Service
 class DepartmentServiceImpl (val departmentCardRepository: IDepartmentCardRepository): IBaseService<DepartmentCard> {
     override fun findAll(): Iterable<DepartmentCard> {

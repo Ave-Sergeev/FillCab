@@ -1,5 +1,9 @@
 package com.example.FillCab.services
 
+/**
+ * Реализация базового сервиса, для расширения конкретными сервисами.
+ */
+
 interface IBaseService<T> {
     //Найти все объекты
     fun findAll(): Iterable<T>

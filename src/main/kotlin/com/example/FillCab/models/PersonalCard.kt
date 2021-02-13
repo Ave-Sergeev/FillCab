@@ -2,6 +2,10 @@ package com.example.FillCab.models
 
 import javax.persistence.*
 
+/**
+ * Класс PersonalCard, хранится в базе
+ */
+
 @Entity
 class PersonalCard(
     @Id

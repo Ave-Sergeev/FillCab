@@ -3,6 +3,12 @@ package com.example.FillCab.models
 import javax.persistence.*
 import javax.persistence.PreRemove
 
+/**
+ * Класс DepartmentCard, хранится в базе
+ * Для правильного удаления дочерних элементов при удалении родителя добавлен PreRemove,
+ * иначе поле удаляется.
+ */
+
 @Entity
 class DepartmentCard (
     @Id
